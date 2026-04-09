@@ -136,6 +136,8 @@ let client = Client::builder("tlk_live_...")
 - [tcglookup-php](https://github.com/TCG-Price-Lookup/tcglookup-php) — PHP
 - [tcglookup CLI](https://www.npmjs.com/package/tcglookup) — terminal client
 
+The full developer ecosystem index lives at **[awesome-tcg](https://github.com/TCG-Price-Lookup/awesome-tcg)**.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
