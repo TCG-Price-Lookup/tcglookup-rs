@@ -1,0 +1,28 @@
+[package]
+name = "tcglookup"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "Rust SDK for TCG Price Lookup — live trading card prices across Pokemon, MTG, Yu-Gi-Oh, Lorcana, One Piece, SWU, Flesh and Blood"
+license = "MIT"
+repository = "https://github.com/TCG-Price-Lookup/tcglookup-rs"
+homepage = "https://tcgpricelookup.com/tcg-api"
+documentation = "https://docs.rs/tcglookup"
+readme = "README.md"
+keywords = ["tcg", "trading-card-game", "pokemon", "mtg", "yugioh"]
+categories = ["api-bindings", "web-programming::http-client"]
+
+[dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+tokio = { version = "1", features = ["macros", "rt"] }
+
+[dev-dependencies]
+mockito = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+[[example]]
+name = "search"
+path = "examples/search.rs"
