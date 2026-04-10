@@ -94,7 +94,11 @@ impl Client {
             return Err(from_response(status.as_u16(), body));
         }
         if body.is_empty() {
-            return Err(Error::Decode(serde_json::from_str::<T>("").unwrap_err()));
+            return Err(Error::Api {
+                status: status.as_u16(),
+                message: "empty response body".to_string(),
+                body: String::new(),
+            });
         }
         serde_json::from_str(&body).map_err(Error::from)
     }
